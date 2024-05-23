@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content_0 %}
+    <a href="/" class="a0">Home</a>
+    <a href="/contact" class="a0">Contact</a>
+    <button class="btnLogin-popup">Login</button>
+{% endblock %}
+
+{% block content_1 %}
+    <main>
+  <section>
+    <div class="contact">
+      <p>CONTACT</p>
+      <p>Tel: 524 843 423</p>
+      <p>Email: hehe@he.he</p>
+    </div>
+    <div id="mapka" style="width:350px; height:200px;"></div>
+  </section>
+
+</main>
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+
+        <div class="form-box login">
+
+            <h2>Login</h2>
+
+            <form method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email" id="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" id="password" required>
+                    <label>Password</label>
+                </div>
+
+                <button type="submit" class="btn00">Login</button>
+
+                <div class="login-register">
+                    <p>Don't have an account yet?
+                        <a href="#" class="register-link">Register</a>
+                    </p>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="form-box register">
+
+            <h2>Registration</h2>
+
+            <form method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="username" id="username"
+                           pattern="[A-Za-z]{1}*{1,}"  oninvalid="this.setCustomValidity('Put in at least 2 characters. It must start with a letter!')"
+                                         oninput="this.setCustomValidity('')"required>
+                    <label>Username</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email" id="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" id="password"
+                           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"  oninvalid="this.setCustomValidity('Minimum 8 characters, at least one letter and one number. No special signs!')"
+                                         oninput="this.setCustomValidity('')"required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" required>I agree to the terms & conditions.</label>
+                </div>
+                <button type="submit" class="btn00">Register</button>
+
+                <div class="login-register">
+                    <p>Already have an account?
+                        <a href="#" class="login-link">Login</a>
+                    </p>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

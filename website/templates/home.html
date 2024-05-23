@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content_0 %}
+    <a href="/home" class="a0">Home</a>
+    <a href="/mynotes" class="a0">History</a>
+    <button class="btnLogin-popup" onclick="window.location.href='/logout'">Logout</button>
+{% endblock %}
+
+{% block content_1 %}
+    <main>
+        {%  block content %}
+            <h1 align="center">All Users' chat</h1>
+            <ul class="list" id="list">
+                {% for note in notes %}
+                    <li class="post"><p class="text">{{ user_collection.find_one({"_id": ObjectId(note.user_id)})['first_name']  }} </p><p class="text">{{ note.date }}</p>{{ note.data.replace('\n', '<br>')|safe  }}</li>
+                    <br/>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </main>
+{% endblock %}

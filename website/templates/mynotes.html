@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content_0 %}
+    <a href="/home" class="a0">Home</a>
+    <a href="/mynotes" class="a0">History</a>
+    <button class="btnLogin-popup" onclick="window.location.href='/logout'">Logout</button>
+{% endblock %}
+
+{% block content_1 %}
+    <main>
+        {%  block content %}
+            <h1 align="center">{{ user.first_name }}'s questions:</h1>
+            <form method="POST">
+                <textarea name="note" id="note" class="textarea" placeholder="Ask a question..."></textarea>
+                <div align="center">
+                    <button type="submit" class="button-note">Ask</button>
+                </div><br/>
+            </form>
+            <ul class="list" id="notes">
+                {% for note in notes %}
+                    <li class="post2">
+                        <span class="data">{{ note['data'].replace('\n', '<br>')|safe }}</span>
+                        <div class="guzior">
+                            <button type="button" class="button-post" onclick="deleteNote('{{ str(note['_id']) }}')">Delete</button>
+                            <button type="button" class="button-post" onclick="showEditForm('{{ str(note['_id'])}}')">Edit</button>
+                        </div>
+                    </li>
+                    <br/>
+                {% endfor %}
+            </ul>
+
+            <div id="editForm" style="display:none;width: 80%;transition: transform .5s ease, height .2s ease;">
+                <h2 style="color:black;">Edit Note</h2>
+                <form method="POST" id="editNoteForm">
+                    <input type="hidden" name="note_id" id="edit_note_id" value="">
+                    <textarea name="edit_note" id="edit_note" class="textarea2" placeholder="Enter an updated question..."></textarea>
+                    <div align="center">
+                        <button type="submit" class="button-note">Save Changes</button>
+                        <button type="button" class="button-note" onclick="hideEditForm()">Cancel</button>
+                    </div><br/>
+                </form>
+            </div>
+        {% endblock %}
+    </main>
+{% endblock %}

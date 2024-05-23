@@ -3,9 +3,9 @@ The project utilizes Flask in Python and MongoDB to deliver AI chat-bot. It incl
 
 ## Setup
 1. Clone the repository to your local machine:
-"git clone <repository_url>"
-2. Navigate to the project directory
-3. Install the required dependencies using pip
+"git clone <repository_url>".
+2. Navigate to the project directory.
+3. Install the required dependencies using pip.
 4. Obtain the necessary MongoDB URL to access created cluster in Atlas and update it in "__init__.py".
 5. Add your local IP in Atlas. 
 6. Download the LLM model (2.83 GB) from:

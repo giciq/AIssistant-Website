@@ -1,4 +1,4 @@
-# AI-chatbot-with-Flask-and-MongoDB
+# AIssistant Website
 The project utilizes Flask in Python and MongoDB to deliver AI chat-bot. It includes Llama-2-7b as a LLM to answer users' questions.
 
 It allows users to register/login to the website and ask AI chat-bot different questions.

@@ -38,9 +38,14 @@ prompt = PromptTemplate(
 model_path = "llama-2-7b-chat.Q2_K.gguf"
 llm = LlamaCpp(
     model_path=model_path,
+    n_gpu_layers=1,
+    n_batch=512,
+    n_ctx=2048,
+    f16_kv=True,
     temperature=0.5,
     max_tokens=500,
-    top_p=1
+    top_p=1,
+    verbose=True
 )
 
 

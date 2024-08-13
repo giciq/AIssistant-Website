@@ -1,0 +1,6 @@
+Flask==2.3.2
+Flask_Login==0.6.2
+langchain==0.2.13
+langchain_community==0.2.12
+pymongo==4.7.2
+Werkzeug==2.3.4
